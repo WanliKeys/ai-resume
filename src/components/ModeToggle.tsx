@@ -8,13 +8,16 @@ export function ModeToggle() {
   const [isDark, setIsDark] = useState(false)
 
   useEffect(() => {
-    // Check for saved theme preference or default to 'light'
+    // Check for saved theme preference, default to 'light' (ignore system preference)
     const savedTheme = localStorage.getItem('theme')
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
     
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+    if (savedTheme === 'dark') {
       setIsDark(true)
       document.documentElement.classList.add('dark')
+    } else {
+      // 确保默认是亮色模式
+      setIsDark(false)
+      document.documentElement.classList.remove('dark')
     }
   }, [])
 

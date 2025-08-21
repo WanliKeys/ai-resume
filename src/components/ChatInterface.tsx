@@ -173,7 +173,7 @@ export function ChatInterface({ isReverseMode }: ChatInterfaceProps) {
                 ? "告诉我你们公司的需求..." 
                 : "问我任何问题..."
               }
-              className="w-full p-3 pr-12 border border-gray-200 rounded-xl resize-none focus:outline-none focus:ring-2 focus:ring-primary-500 bg-white/50 backdrop-blur-sm"
+              className="w-full p-3 pr-12 border border-gray-200 dark:border-gray-500 rounded-xl resize-none focus:outline-none focus:ring-2 focus:ring-primary-500 bg-white/90 dark:bg-white/15 backdrop-blur-sm text-gray-900 dark:text-gray-900 placeholder-gray-500 dark:placeholder-gray-600"
               rows={3}
               disabled={isLoading}
             />
@@ -251,7 +251,7 @@ function QuickAction({ onClick, children }: { onClick: () => void; children: Rea
   return (
     <motion.button
       onClick={onClick}
-      className="px-3 py-2 text-sm bg-white/70 hover:bg-white rounded-lg border border-gray-200 hover:border-primary-300 transition-all duration-200"
+      className="px-3 py-2 text-sm bg-white/80 dark:bg-white/15 hover:bg-white dark:hover:bg-white/25 rounded-lg border border-gray-200 dark:border-gray-500 hover:border-primary-300 dark:hover:border-primary-400 transition-all duration-200 text-gray-700 dark:text-gray-900"
       whileHover={{ scale: 1.02, y: -1 }}
       whileTap={{ scale: 0.98 }}
     >
