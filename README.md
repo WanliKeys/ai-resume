@@ -199,7 +199,7 @@ A: 可以，修改 `src/app/api/chat/route.ts` 适配其他模型API。
 ## 📮 联系方式
 
 - 作者：李万里
-- 邮箱：liwanli@example.com
+- 邮箱：liwanli_6@163.com
 - GitHub：[@liwanli](https://github.com/liwanli)
 
 ---
