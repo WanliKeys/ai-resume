@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Mic, MicOff, Volume2, VolumeX } from 'lucide-react'
 
+// Speech Recognition API types imported from global types
+
 interface VoiceControlsProps {
   isListening: boolean
   isSpeaking: boolean
@@ -21,12 +23,12 @@ export function VoiceControls({
   onStopSpeaking,
   onVoiceInput 
 }: VoiceControlsProps) {
-  const [recognition, setRecognition] = useState<SpeechRecognition | null>(null)
+  const [recognition, setRecognition] = useState<any>(null)
   const [isSupported, setIsSupported] = useState(false)
 
   useEffect(() => {
     // Check if speech recognition is supported
-    if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+    if (typeof window !== 'undefined' && (window.webkitSpeechRecognition || window.SpeechRecognition)) {
       const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
       const recognitionInstance = new SpeechRecognition()
       
